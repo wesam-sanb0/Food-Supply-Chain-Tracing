@@ -1,0 +1,25 @@
+﻿Member: Wesam
+
+CPU Model: Intel Core i9-13900H
+Physical Cores: 14
+Logical Threads: 20
+Base Clock: 2.60 GHz
+Max Boost Clock: 5.40 GHz
+RAM: 16 GB
+OS: Microsoft Windows 11 Home
+OS Version: 10.0.26300
+Compiler: GCC (g++) 13.2.0
+Compiler Flags: -std=c++17 -O2
+
+Benchmark Version: v1.0
+Seed: 42
+Execution: Sequential (1 thread, no OpenMP)
+
+Median Total Execution Time (ms):
+Nodes       Reported Batches    Median (ms)
+10000       1000                36.8175
+100000      1000                215.0925
+500000      1000                553.422
+1000000     1000                773.57
+100000      100                 56.2745
+100000      10000               1790.7155
