@@ -54,7 +54,7 @@ echo "Member : $MEMBER"
 echo "CPU    : $CPU"
 echo "Output : $OUT"
 echo "Compiling with $CXX -O2 ..."
-"$CXX" -std=c++17 -O2 -Isrc src/main.cpp src/generator.cpp src/trace.cpp -o food_trace
+"$CXX" -std=c++17 -O2 -Isrc src/main.cpp src/generator.cpp src/trace.cpp src/parallel_trace.cpp src/parallel_sync.cpp -fopenmp -o food_trace
 
 run() {
     ./food_trace --nodes "$1" --reported "$2" --seed "$SEED" --deg "$DEG" --runs "$RUNS" \

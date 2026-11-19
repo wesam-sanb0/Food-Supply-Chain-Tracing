@@ -1,0 +1,29 @@
+Microsoft Windows [Version 10.0.26300.9974]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\alshb>cd C:\A2test\Food-Supply-Chain-Tracing-main
+
+C:\A2test\Food-Supply-Chain-Tracing-main>g++ -std=c++17 -O2 -fopenmp -Isrc src\main.cpp src\generator.cpp src\trace.cpp src\parallel_trace.cpp src\parallel_sync.cpp -o food_trace_omp.exe
+
+C:\A2test\Food-Supply-Chain-Tracing-main>food_trace_omp.exe --version race --threads 4 --runs 5 --out results\test.csv
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=race threads=4 runs=5 (+1 warm-up) ===
+warm-up    total=141.845 ms  edges=300000  checksum=9108736  correct=NO
+run  1/5  gen=25.334  build=1.043  trace=96.539  agg=0.786  total=123.703 ms  checksum=9103291  <-- WRONG
+run  2/5  gen=34.827  build=4.819  trace=88.619  agg=0.753  total=129.017 ms  checksum=9107297  <-- WRONG
+run  3/5  gen=53.291  build=3.003  trace=144.042  agg=0.769  total=201.104 ms  checksum=9103807  <-- WRONG
+run  4/5  gen=25.078  build=4.700  trace=109.513  agg=0.747  total=140.039 ms  checksum=9106495  <-- WRONG
+run  5/5  gen=25.101  build=1.116  trace=99.686  agg=0.742  total=126.646 ms  checksum=9106811  <-- WRONG
+median total=129.017 ms  (min 123.703, max 201.104)  median trace=99.686 ms
+race version: 5/5 runs gave wrong counts, 5 different checksum(s)
+
+C:\A2test\Food-Supply-Chain-Tracing-main>food_trace_omp.exe --version critical --threads 4 --runs 5 --out results\test.csv
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=critical threads=4 runs=5 (+1 warm-up) ===
+warm-up    total=140.747 ms  edges=300000  checksum=9120414  correct=yes
+run  1/5  gen=31.885  build=3.251  trace=96.624  agg=0.768  total=132.528 ms  checksum=9120414
+run  2/5  gen=25.404  build=1.213  trace=90.469  agg=0.768  total=117.855 ms  checksum=9120414
+run  3/5  gen=32.451  build=2.386  trace=91.197  agg=0.758  total=126.792 ms  checksum=9120414
+run  4/5  gen=29.643  build=2.337  trace=93.404  agg=0.826  total=126.210 ms  checksum=9120414
+run  5/5  gen=29.371  build=2.421  trace=91.416  agg=0.784  total=123.992 ms  checksum=9120414
+median total=126.210 ms  (min 117.855, max 132.528)  median trace=91.416 ms

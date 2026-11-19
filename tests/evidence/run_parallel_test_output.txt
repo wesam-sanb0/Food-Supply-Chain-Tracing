@@ -1,0 +1,144 @@
+C:\A2test\Food-Supply-Chain-Tracing-main>set RUNS=2
+
+C:\A2test\Food-Supply-Chain-Tracing-main>set THREADS=1 4
+
+C:\A2test\Food-Supply-Chain-Tracing-main>scripts\run_parallel.bat "Lama Aseeri"
+Member  : Lama Aseeri
+CPU     : 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz  (8 logical CPUs)
+Threads : 1 4
+Output  : results\parallel\Lama_Aseeri.csv
+Compiling with g++ -O2 -fopenmp ...
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=seq threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=395.039 ms  edges=300000  checksum=9120414  correct=yes
+run  1/2  gen=39.091  build=3.458  trace=346.899  agg=1.036  total=390.484 ms  checksum=9120414
+run  2/2  gen=32.599  build=2.438  trace=406.840  agg=0.886  total=442.764 ms  checksum=9120414
+median total=416.624 ms  (min 390.484, max 442.764)  median trace=376.870 ms
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=race threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=377.460 ms  edges=300000  checksum=9120414  correct=yes
+run  1/2  gen=29.383  build=2.387  trace=367.272  agg=0.850  total=399.892 ms  checksum=9120414
+run  2/2  gen=32.845  build=2.760  trace=393.903  agg=0.839  total=430.347 ms  checksum=9120414
+median total=415.120 ms  (min 399.892, max 430.347)  median trace=380.588 ms
+race version: 0/2 runs gave wrong counts, 1 different checksum(s)
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=race threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=126.815 ms  edges=300000  checksum=9101558  correct=NO
+run  1/2  gen=29.574  build=2.702  trace=94.095  agg=0.783  total=127.153 ms  checksum=9106387  <-- WRONG
+run  2/2  gen=36.973  build=2.396  trace=109.739  agg=0.843  total=149.951 ms  checksum=9105758  <-- WRONG
+median total=138.552 ms  (min 127.153, max 149.951)  median trace=101.917 ms
+race version: 2/2 runs gave wrong counts, 2 different checksum(s)
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=critical threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=411.001 ms  edges=300000  checksum=9120414  correct=yes
+run  1/2  gen=42.429  build=2.360  trace=411.722  agg=0.843  total=457.354 ms  checksum=9120414
+run  2/2  gen=37.616  build=4.450  trace=410.716  agg=0.829  total=453.611 ms  checksum=9120414
+median total=455.482 ms  (min 453.611, max 457.354)  median trace=411.219 ms
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=critical threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=131.281 ms  edges=300000  checksum=9120414  correct=yes
+run  1/2  gen=24.831  build=1.112  trace=89.300  agg=0.913  total=116.156 ms  checksum=9120414
+run  2/2  gen=30.054  build=2.431  trace=88.086  agg=0.777  total=121.349 ms  checksum=9120414
+median total=118.753 ms  (min 116.156, max 121.349)  median trace=88.693 ms
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=atomic threads=1 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=atomic threads=4 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=reduction threads=1 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=1000 seed=42 deg=3.000 version=reduction threads=4 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=seq threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=1607.122 ms  edges=3000000  checksum=38315152  correct=yes
+run  1/2  gen=311.826  build=14.283  trace=1214.581  agg=9.089  total=1549.779 ms  checksum=38315152
+run  2/2  gen=323.029  build=24.031  trace=1235.262  agg=9.069  total=1591.391 ms  checksum=38315152
+median total=1570.585 ms  (min 1549.779, max 1591.391)  median trace=1224.921 ms
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=race threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=1578.296 ms  edges=3000000  checksum=38315152  correct=yes
+run  1/2  gen=328.754  build=22.288  trace=2898.831  agg=28.452  total=3278.325 ms  checksum=38315152
+run  2/2  gen=964.802  build=65.347  trace=3427.443  agg=28.539  total=4486.132 ms  checksum=38315152
+median total=3882.229 ms  (min 3278.325, max 4486.132)  median trace=3163.137 ms
+race version: 0/2 runs gave wrong counts, 1 different checksum(s)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=race threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=795.376 ms  edges=3000000  checksum=38308639  correct=NO
+run  1/2  gen=381.995  build=27.343  trace=993.633  agg=29.998  total=1432.968 ms  checksum=38307581  <-- WRONG
+run  2/2  gen=933.902  build=53.999  trace=1242.546  agg=29.780  total=2260.228 ms  checksum=38310715  <-- WRONG
+median total=1846.598 ms  (min 1432.968, max 2260.228)  median trace=1118.089 ms
+race version: 2/2 runs gave wrong counts, 2 different checksum(s)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=critical threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=2700.921 ms  edges=3000000  checksum=38315152  correct=yes
+run  1/2  gen=959.472  build=41.115  trace=3158.416  agg=30.052  total=4189.055 ms  checksum=38315152
+run  2/2  gen=890.548  build=34.654  trace=3515.031  agg=31.072  total=4471.305 ms  checksum=38315152
+median total=4330.180 ms  (min 4189.055, max 4471.305)  median trace=3336.723 ms
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=critical threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=717.786 ms  edges=3000000  checksum=38315152  correct=yes
+run  1/2  gen=376.317  build=23.780  trace=727.834  agg=30.385  total=1158.317 ms  checksum=38315152
+run  2/2  gen=930.439  build=40.083  trace=760.194  agg=9.214  total=1739.930 ms  checksum=38315152
+median total=1449.124 ms  (min 1158.317, max 1739.930)  median trace=744.014 ms
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=atomic threads=1 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=atomic threads=4 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=reduction threads=1 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+=== nodes=1000000 reported=1000 seed=42 deg=3.000 version=reduction threads=4 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=seq threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=3833.565 ms  edges=300000  checksum=91201863  correct=yes
+run  1/2  gen=34.947  build=1.316  trace=3939.461  agg=1.750  total=3977.475 ms  checksum=91201863
+run  2/2  gen=31.958  build=2.587  trace=3826.711  agg=0.789  total=3862.045 ms  checksum=91201863
+median total=3919.760 ms  (min 3862.045, max 3977.475)  median trace=3883.086 ms
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=race threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=3897.675 ms  edges=300000  checksum=91201863  correct=yes
+run  1/2  gen=57.084  build=2.034  trace=3832.644  agg=0.915  total=3892.677 ms  checksum=91201863
+run  2/2  gen=44.609  build=5.057  trace=3837.523  agg=1.021  total=3888.210 ms  checksum=91201863
+median total=3890.444 ms  (min 3888.210, max 3892.677)  median trace=3835.083 ms
+race version: 0/2 runs gave wrong counts, 1 different checksum(s)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=race threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=1095.900 ms  edges=300000  checksum=91054697  correct=NO
+run  1/2  gen=31.200  build=2.391  trace=959.346  agg=0.780  total=993.717 ms  checksum=91024377  <-- WRONG
+run  2/2  gen=32.438  build=2.574  trace=1019.407  agg=0.769  total=1055.187 ms  checksum=91048121  <-- WRONG
+median total=1024.452 ms  (min 993.717, max 1055.187)  median trace=989.377 ms
+race version: 2/2 runs gave wrong counts, 2 different checksum(s)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=critical threads=1 runs=2 (+1 warm-up) ===
+warm-up    total=3805.017 ms  edges=300000  checksum=91201863  correct=yes
+run  1/2  gen=29.162  build=2.470  trace=3964.861  agg=0.861  total=3997.355 ms  checksum=91201863
+run  2/2  gen=34.572  build=3.073  trace=3776.531  agg=1.076  total=3815.252 ms  checksum=91201863
+median total=3906.303 ms  (min 3815.252, max 3997.355)  median trace=3870.696 ms
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=critical threads=4 runs=2 (+1 warm-up) ===
+warm-up    total=849.868 ms  edges=300000  checksum=91201863  correct=yes
+run  1/2  gen=25.171  build=2.469  trace=841.450  agg=0.782  total=869.872 ms  checksum=91201863
+run  2/2  gen=26.623  build=3.396  trace=840.597  agg=0.763  total=871.379 ms  checksum=91201863
+median total=870.626 ms  (min 869.872, max 871.379)  median trace=841.024 ms
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=atomic threads=1 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=atomic threads=4 runs=2 (+1 warm-up) ===
+skipped: atomic version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=reduction threads=1 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+=== nodes=100000 reported=10000 seed=42 deg=3.000 version=reduction threads=4 runs=2 (+1 warm-up) ===
+skipped: reduction version not implemented yet (parallel_sync.cpp)
+
+Done. Results saved to results\parallel\Lama_Aseeri.csv

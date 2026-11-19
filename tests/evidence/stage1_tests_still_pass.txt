@@ -1,0 +1,12 @@
+C:\A2test\Food-Supply-Chain-Tracing-main>g++ -std=c++17 -O2 -Isrc tests\test_trace.cpp src\trace.cpp src\generator.cpp -o test_trace.exe
+
+C:\A2test\Food-Supply-Chain-Tracing-main>test_trace.exe
+A1 duplicate paths + common suppliers ... OK
+A2 disconnected batch ..................... OK
+A3 no common supplier ..................... OK
+A4 tracing direction ...................... OK
+B  generated graph n=2000 matches forward-search reference ... OK (checksum 39000)
+B  generated graph n=10000 matches forward-search reference ... OK (checksum 192883)
+B  generated graph n=30000 matches forward-search reference ... OK (checksum 570821)
+B  same seed -> same checksum (2379111) ...... OK
+ALL TESTS PASSED
