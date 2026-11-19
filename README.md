@@ -1,11 +1,6 @@
 # Food Supply Chain Tracing
 
-**Parallel Computing Project — Sequential BFS Tracing and Benchmarking**
-
-
-# Food Supply Chain Tracing
-
-**Parallel Computing Project — Sequential BFS Tracing and OpenMP Parallelization**
+**Parallel Computing Project — Sequential BFS Tracing , Benchmarking and OpenMP Parallelization**
 
 ## Project Overview
 
